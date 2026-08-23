@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-23T19:06:08.554734Z",
+  "endpoints": [
+    {
+      "method": "GET",
+      "spec_path": "/company/{company_number}",
+      "sample_url": "https://api.company-information.service.gov.uk/company/07195160",
+      "status": "validated",
+      "calls": 6,
+      "matched": 6,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/company/{company_number}/charges",
+      "sample_url": "https://api.company-information.service.gov.uk/company/07195160/charges",
+      "status": "validated",
+      "calls": 6,
+      "matched": 6,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/company/{company_number}/filing-history",
+      "sample_url": "https://api.company-information.service.gov.uk/company/07195160/filing-history?start_index=0&items_per_page=100",
+      "status": "validated",
+      "calls": 10,
+      "matched": 10,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/company/{company_number}/officers",
+      "sample_url": "https://api.company-information.service.gov.uk/company/07195160/officers?start_index=0&items_per_page=100",
+      "status": "validated",
+      "calls": 6,
+      "matched": 6,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/company/{company_number}/persons-with-significant-control",
+      "sample_url": "https://api.company-information.service.gov.uk/company/07195160/persons-with-significant-control?start_index=0&items_per_page=100",
+      "status": "validated",
+      "calls": 6,
+      "matched": 6,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/company/{company_number}/registered-office-address",
+      "sample_url": "https://api.company-information.service.gov.uk/company/07195160/registered-office-address",
+      "status": "validated",
+      "calls": 6,
+      "matched": 6,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    }
+  ],
+  "summary": {
+    "endpoints_total": 6,
+    "endpoints_validated": 6,
+    "endpoints_mismatched": 0,
+    "endpoints_missing_spec": 0
+  }
+}

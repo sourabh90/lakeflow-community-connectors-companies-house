@@ -1,0 +1,224 @@
+[
+  {
+    "transaction_id": "MzUyMDQ5OTQ1N2FkaXF6a2N4",
+    "barcode": "XF1N42IR",
+    "type": "CS01",
+    "date": "2026-05-08",
+    "category": "confirmation-statement",
+    "description": "confirmation-statement-with-no-updates",
+    "description_values": {
+      "made_up_date": "2026-03-18"
+    },
+    "pages": 3,
+    "paper_filed": false,
+    "action_date": "2026-03-18",
+    "links": {
+      "self": "/company/07195160/filing-history/MzUyMDQ5OTQ1N2FkaXF6a2N4",
+      "document_metadata": "https://document-api.company-information.service.gov.uk/document/L-hIFbuShB2meAwdVbJfRQRfST1B1igq_Si6grudDBo"
+    },
+    "annotations": [
+      {
+        "annotation": "Correction filed for typographical error in officer name.",
+        "date": "2026-05-15",
+        "description": "annotation-clerical-correction"
+      }
+    ]
+  },
+  {
+    "transaction_id": "MzQ5MjU4OTAxM2FkaXF6a2N4",
+    "barcode": "XEGQJCX4",
+    "type": "TM01",
+    "date": "2025-12-05",
+    "category": "officers",
+    "subcategory": "termination",
+    "description": "termination-director-company-with-name-termination-date",
+    "description_values": {
+      "officer_name": "Alexis Samuel",
+      "termination_date": "2025-11-30"
+    },
+    "pages": 1,
+    "action_date": "2025-11-30",
+    "links": {
+      "self": "/company/07195160/filing-history/MzQ5MjU4OTAxM2FkaXF6a2N4",
+      "document_metadata": "https://document-api.company-information.service.gov.uk/document/Lz0LB4ABUCJXu4w4eLGMnSD8tcjV76HFxElkPCxD-3E"
+    }
+  },
+  {
+    "transaction_id": "MzQ4NTczODE1OGFkaXF6a2N4",
+    "barcode": "AEDGMSYO",
+    "type": "AA",
+    "date": "2025-10-21",
+    "category": "accounts",
+    "description": "accounts-with-accounts-type-full",
+    "description_values": {
+      "made_up_date": "2024-12-31"
+    },
+    "pages": 52,
+    "action_date": "2024-12-31",
+    "paper_filed": true,
+    "links": {
+      "self": "/company/07195160/filing-history/MzQ4NTczODE1OGFkaXF6a2N4",
+      "document_metadata": "https://document-api.company-information.service.gov.uk/document/EZD-wcARJyp1JOFOAbqWxisPOZbQvESqxJrE0l74DDE"
+    }
+  },
+  {
+    "transaction_id": "MzAxNTU0ODA0MGFkaXF6a2N4",
+    "barcode": "A0VSUJV5",
+    "type": "SH01",
+    "date": "2010-05-14",
+    "category": "capital",
+    "description": "capital-allotment-shares",
+    "description_values": {
+      "date": "2010-05-06",
+      "capital": [
+        {
+          "currency": "GBP",
+          "figure": "101"
+        }
+      ]
+    },
+    "pages": 5,
+    "action_date": "2010-05-06",
+    "paper_filed": true,
+    "links": {
+      "self": "/company/07195160/filing-history/MzAxNTU0ODA0MGFkaXF6a2N4",
+      "document_metadata": "https://document-api.company-information.service.gov.uk/document/-TOBJSa6yhn0-8lt4T5ciEe2uIW8U5EUq0ZzZhFRJwc"
+    }
+  },
+  {
+    "transaction_id": "MzAxNTU0Nzk3NWFkaXF6a2N4",
+    "type": "RESOLUTIONS",
+    "date": "2010-05-14",
+    "category": "resolution",
+    "resolutions": [
+      {
+        "category": "capital",
+        "description": "resolution",
+        "type": "RES13",
+        "subcategory": "resolution",
+        "description_values": {
+          "description": "Sect 551 exercise all powers to allot 100 ord shares of £1 06/05/2010"
+        }
+      }
+    ],
+    "description": "resolution",
+    "description_values": {
+      "description": "Resolutions"
+    },
+    "pages": 1,
+    "paper_filed": true,
+    "links": {
+      "self": "/company/07195160/filing-history/MzAxNTU0Nzk3NWFkaXF6a2N4",
+      "document_metadata": "https://document-api.company-information.service.gov.uk/document/whWxDDVTn6eOo8cNG-ZPy50b50g93LsTwLYezdBKLAM"
+    }
+  },
+  {
+    "transaction_id": "MzAxMTc2NjQ5N2FkaXF6a2N4",
+    "barcode": "LR4H1IEU",
+    "type": "NEWINC",
+    "date": "2010-03-18",
+    "category": "incorporation",
+    "associated_filings": [
+      {
+        "category": "incorporation",
+        "date": "2010-03-18",
+        "description": "model-articles-adopted-amended-provisions",
+        "type": "MODEL ARTICLES"
+      }
+    ],
+    "description": "incorporation-company",
+    "pages": 36,
+    "paper_filed": true,
+    "links": {
+      "self": "/company/07195160/filing-history/MzAxMTc2NjQ5N2FkaXF6a2N4",
+      "document_metadata": "https://document-api.company-information.service.gov.uk/document/gIc8mdHmOt799oatt_Biz4crZ_pzjsXBYWKmUaZkeyA"
+    }
+  },
+  {
+    "transaction_id": "MzIwODg2ODM4OGFkaXF6a2N4",
+    "type": "GAZ2(A)",
+    "date": "2018-07-10",
+    "category": "gazette",
+    "description": "gazette-dissolved-voluntary",
+    "pages": 1,
+    "paper_filed": true,
+    "links": {
+      "self": "/company/00000006/filing-history/MzIwODg2ODM4OGFkaXF6a2N4",
+      "document_metadata": "https://document-api.company-information.service.gov.uk/document/bg01EDBqES8DV0OAqOokaT4Gw8BnplUI4Nm9c4Mzuww"
+    }
+  },
+  {
+    "transaction_id": "MzIwMTk3MTQ1M2FkaXF6a2N4",
+    "barcode": "A72WY463",
+    "type": "DS01",
+    "date": "2018-04-11",
+    "category": "dissolution",
+    "description": "dissolution-application-strike-off-company",
+    "pages": 3,
+    "paper_filed": true,
+    "links": {
+      "self": "/company/00000006/filing-history/MzIwMTk3MTQ1M2FkaXF6a2N4",
+      "document_metadata": "https://document-api.company-information.service.gov.uk/document/BIBq3MWfF1UkhqXkL2CqN86qGhne3-sbjgh6oP6tnho"
+    }
+  },
+  {
+    "transaction_id": "MjQ4MjY1MzFhZGlxemtjeA",
+    "type": "363s",
+    "date": "2005-06-17",
+    "category": "annual-return",
+    "associated_filings": [
+      {
+        "category": "annual-return",
+        "date": "2005-06-17",
+        "description": "legacy",
+        "type": "363(288)",
+        "description_values": {
+          "description": "Director's particulars changed"
+        }
+      }
+    ],
+    "description": "legacy",
+    "description_values": {
+      "description": "Annual return made up to 30/04/05"
+    },
+    "pages": 7,
+    "paper_filed": true,
+    "links": {
+      "self": "/company/00000006/filing-history/MjQ4MjY1MzFhZGlxemtjeA",
+      "document_metadata": "https://document-api.company-information.service.gov.uk/document/PapeVIA7LyuI1y-9wHNxqWxUjtwl8bc67lHffCIVpsE"
+    }
+  },
+  {
+    "transaction_id": "Nzg0ODczNjVhZGlxemtjeA",
+    "type": "MISC",
+    "date": "1962-10-25",
+    "category": "miscellaneous",
+    "description": "miscellaneous",
+    "description_values": {
+      "description": "Certificate of incorporation"
+    },
+    "pages": 2,
+    "paper_filed": true,
+    "links": {
+      "self": "/company/00000006/filing-history/Nzg0ODczNjVhZGlxemtjeA",
+      "document_metadata": "https://document-api.company-information.service.gov.uk/document/zOKVhtWrcsF1jGjIHIRzVwJh2uqwjiCBFH7aPPCRRtA"
+    }
+  },
+  {
+    "transaction_id": "MjU2Mjg5ODhhZGlxemtjeA",
+    "type": "CERTNM",
+    "date": "1900-01-01",
+    "category": "change-of-name",
+    "subcategory": "certificate",
+    "description": "certificate-change-of-name-company",
+    "description_values": {
+      "description": "Company name changed\\certificate issued on 01/01/00"
+    },
+    "pages": 5,
+    "paper_filed": true,
+    "links": {
+      "self": "/company/00000006/filing-history/MjU2Mjg5ODhhZGlxemtjeA",
+      "document_metadata": "https://document-api.company-information.service.gov.uk/document/g9h4sUhQTyCveRXx9g9cS9mZWp02AjOHu1qc9cTIB0g"
+    }
+  }
+]

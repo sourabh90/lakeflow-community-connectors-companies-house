@@ -1,0 +1,462 @@
+[
+  {
+    "etag": "ee575a7d1dba858368761c4350689c82d7079927",
+    "address": {
+      "address_line_1": "Bishopsgate",
+      "country": "United Kingdom",
+      "locality": "London",
+      "postal_code": "EC2M 4AG",
+      "premises": "280"
+    },
+    "appointed_on": "2022-03-21",
+    "is_pre_1992_appointment": false,
+    "links": {
+      "self": "/company/07195160/appointments/pRJ3Acft0NDzoHkGeuq6Fg3ArPc",
+      "officer": {
+        "appointments": "/officers/qQI7mxI1LACg5LfOW-M-liGqTEM/appointments"
+      }
+    },
+    "name": "LAVER, Sophia",
+    "officer_role": "secretary",
+    "person_number": "294214060001",
+    "appointed_before": "1991-05-01",
+    "occupation": "Company Secretary",
+    "responsibilities": "Corporate governance and secretarial duties",
+    "country_of_residence": "United Kingdom",
+    "nationality": "British",
+    "date_of_birth": {
+      "month": 4,
+      "year": 1975
+    },
+    "identity_verification_details": {
+      "anti_money_laundering_supervisory_bodies": [
+        "HMRC"
+      ],
+      "appointment_verification_end_on": "9999-12-31",
+      "appointment_verification_start_on": "2026-05-08",
+      "authorised_corporate_service_provider_name": "LAW DEBENTURE CORPORATE SERVICES LIMITED ACSP",
+      "identity_verified_on": "2026-04-27",
+      "preferred_name": "Sophia Louise Laver"
+    },
+    "former_names": [
+      {
+        "forenames": "Sophia Louise",
+        "surname": "SMITH"
+      }
+    ],
+    "identification": {
+      "identification_type": "eea",
+      "legal_authority": "Companies Act 2006",
+      "legal_form": "Limited Liability Company",
+      "place_registered": "England and Wales",
+      "registration_number": "OC012345"
+    }
+  },
+  {
+    "etag": "f83d2cf30b599ba382288df05a7492f9707bd068",
+    "address": {
+      "address_line_1": "Bishopsgate",
+      "country": "United Kingdom",
+      "locality": "London",
+      "postal_code": "EC2M 4AG",
+      "premises": "280"
+    },
+    "appointed_on": "2024-09-01",
+    "is_pre_1992_appointment": false,
+    "country_of_residence": "United States",
+    "date_of_birth": {
+      "month": 7,
+      "year": 1974
+    },
+    "links": {
+      "self": "/company/07195160/appointments/Twzx8Vqo5EzN194pmjZcLJIaNbY",
+      "officer": {
+        "appointments": "/officers/ZK2JMjHCMI6cyDgUJ-ZoZ3ku-T4/appointments"
+      }
+    },
+    "name": "DALAL, Jatin Pravinchandra",
+    "nationality": "Indian",
+    "officer_role": "director",
+    "person_number": "326691720001",
+    "identity_verification_details": {
+      "anti_money_laundering_supervisory_bodies": [
+        "HMRC"
+      ],
+      "appointment_verification_end_on": "9999-12-31",
+      "appointment_verification_start_on": "2026-05-08",
+      "authorised_corporate_service_provider_name": "LAW DEBENTURE CORPORATE SERVICES LIMITED ACSP",
+      "identity_verified_on": "2026-04-27",
+      "preferred_name": "Jatin Pravinchandra Dalal"
+    }
+  },
+  {
+    "etag": "883c927ab960c75dbb7083dabc80981ce1bef84d",
+    "address": {
+      "address_line_1": "Bishopsgate",
+      "country": "United Kingdom",
+      "locality": "London",
+      "postal_code": "EC2M 4AG",
+      "premises": "280"
+    },
+    "appointed_on": "2023-05-31",
+    "is_pre_1992_appointment": false,
+    "country_of_residence": "France",
+    "date_of_birth": {
+      "month": 7,
+      "year": 1976
+    },
+    "links": {
+      "self": "/company/07195160/appointments/uYpxD_Xt9L8oxLD-UpxoNYGgNxA",
+      "officer": {
+        "appointments": "/officers/sCsVSa3y962WmVcfhNZsFLWUFv8/appointments"
+      }
+    },
+    "name": "DE ROCCA-SERRA, Elisa",
+    "nationality": "French",
+    "officer_role": "director",
+    "person_number": "311249620001",
+    "identity_verification_details": {
+      "anti_money_laundering_supervisory_bodies": [
+        "HMRC"
+      ],
+      "appointment_verification_end_on": "9999-12-31",
+      "appointment_verification_start_on": "2026-05-08",
+      "authorised_corporate_service_provider_name": "LAW DEBENTURE CORPORATE SERVICES LIMITED ACSP",
+      "identity_verified_on": "2026-04-15",
+      "preferred_name": "Elisa de Rocca-Serra"
+    }
+  },
+  {
+    "etag": "fc11422963c400a46825ec30a73cedc8d2bb5019",
+    "address": {
+      "address_line_1": "Bishopsgate",
+      "country": "United Kingdom",
+      "locality": "London",
+      "postal_code": "EC2M 4AG",
+      "premises": "280"
+    },
+    "appointed_on": "2023-12-04",
+    "is_pre_1992_appointment": false,
+    "country_of_residence": "United States",
+    "date_of_birth": {
+      "month": 9,
+      "year": 1973
+    },
+    "links": {
+      "self": "/company/07195160/appointments/_k4bDsoElGUVWbbiGLS-6waUM50",
+      "officer": {
+        "appointments": "/officers/xSRnrlaD22IdD_bVT2Fjk2nHmnA/appointments"
+      }
+    },
+    "name": "SHOR, Yana",
+    "nationality": "American",
+    "officer_role": "director",
+    "person_number": "318158070001",
+    "identity_verification_details": {
+      "anti_money_laundering_supervisory_bodies": [
+        "HMRC"
+      ],
+      "appointment_verification_end_on": "9999-12-31",
+      "appointment_verification_start_on": "2026-05-08",
+      "authorised_corporate_service_provider_name": "LAW DEBENTURE CORPORATE SERVICES LIMITED ACSP",
+      "identity_verified_on": "2026-03-27",
+      "preferred_name": "Yana Shor"
+    }
+  },
+  {
+    "etag": "41bce3976ef7a77e74ace0a0e99d07c72567c09e",
+    "address": {
+      "address_line_1": "Bishopsgate",
+      "country": "United Kingdom",
+      "locality": "London",
+      "postal_code": "EC2M 4AG",
+      "premises": "280"
+    },
+    "appointed_on": "2016-12-07",
+    "is_pre_1992_appointment": false,
+    "country_of_residence": "United Kingdom",
+    "date_of_birth": {
+      "month": 3,
+      "year": 1968
+    },
+    "links": {
+      "self": "/company/07195160/appointments/QfSAAzuIHYvQNAysF09SEJEkNeo",
+      "officer": {
+        "appointments": "/officers/Gi6UNpVL94wQ_hBwVmvwP-TAB0I/appointments"
+      }
+    },
+    "name": "SUK-WON YU, James",
+    "nationality": "American",
+    "officer_role": "director",
+    "person_number": "221327740004",
+    "identity_verification_details": {
+      "anti_money_laundering_supervisory_bodies": [
+        "HMRC"
+      ],
+      "appointment_verification_end_on": "9999-12-31",
+      "appointment_verification_start_on": "2026-05-08",
+      "authorised_corporate_service_provider_name": "LAW DEBENTURE CORPORATE SERVICES LIMITED ACSP",
+      "identity_verified_on": "2026-04-08",
+      "preferred_name": "James Suk-Won Yu"
+    }
+  },
+  {
+    "etag": "f11c09bf8e8ae28145416c31a15a2548f53b62df",
+    "address": {
+      "address_line_1": "Cannon Place",
+      "address_line_2": "78 Cannon Street",
+      "country": "England",
+      "locality": "London",
+      "postal_code": "EC4N 6AF",
+      "premises": "Cms Cameron Mckenna Llp"
+    },
+    "appointed_on": "2016-09-13",
+    "is_pre_1992_appointment": false,
+    "links": {
+      "self": "/company/00000006/appointments/XOgtPRCRE8PPQnrxSg_ccYmmR7Y",
+      "officer": {
+        "appointments": "/officers/1UUfj2gDv9ZVoykvoy9hhEhXDcY/appointments"
+      }
+    },
+    "name": "PRINGLE, Martin",
+    "officer_role": "secretary",
+    "person_number": "214162780001"
+  },
+  {
+    "etag": "96290a487cbd10f1dee3e40079a84dcbddc3ed8d",
+    "address": {
+      "address_line_1": "Cannon Place",
+      "address_line_2": "78 Cannon Street",
+      "country": "England",
+      "locality": "London",
+      "postal_code": "EC4N 6AF",
+      "premises": "Cms Cameron Mckenna Llp"
+    },
+    "appointed_on": "2015-03-01",
+    "is_pre_1992_appointment": false,
+    "country_of_residence": "United Kingdom",
+    "date_of_birth": {
+      "month": 3,
+      "year": 1963
+    },
+    "links": {
+      "self": "/company/00000006/appointments/CR_QWwLTxder5dMIY4_HEhjnm_I",
+      "officer": {
+        "appointments": "/officers/I-4OI1Rt7bqjbeWflGDl_s6KG6s/appointments"
+      }
+    },
+    "name": "GALBRAITH, James",
+    "nationality": "British",
+    "officer_role": "director",
+    "person_number": "115149590001"
+  },
+  {
+    "etag": "54d9dd3db274dc06ec337dd725d207f5ad0877fa",
+    "address": {
+      "address_line_1": "Cannon Place",
+      "address_line_2": "78 Cannon Street",
+      "country": "England",
+      "locality": "London",
+      "postal_code": "EC4N 6AF",
+      "premises": "Cms Cameron Mckenna Llp"
+    },
+    "appointed_on": "2015-06-01",
+    "is_pre_1992_appointment": false,
+    "country_of_residence": "United Kingdom",
+    "date_of_birth": {
+      "month": 10,
+      "year": 1952
+    },
+    "links": {
+      "self": "/company/00000006/appointments/4J3sH3OZauKahUq52Hfsy7e7_6U",
+      "officer": {
+        "appointments": "/officers/Z7im4wk4V9mVRJ06XtXntHRjihI/appointments"
+      }
+    },
+    "name": "WALKER, Michael John",
+    "nationality": "British",
+    "officer_role": "director",
+    "person_number": "1198700002"
+  },
+  {
+    "etag": "55c5ae7c332b182ce5760704983bab48eda17c9d",
+    "address": {
+      "address_line_1": "Byewood",
+      "address_line_2": "Bolney Road",
+      "locality": "Ansty",
+      "postal_code": "RH17 5AW",
+      "region": "West Sussex"
+    },
+    "appointed_on": "1997-04-01",
+    "is_pre_1992_appointment": false,
+    "links": {
+      "self": "/company/00000006/appointments/UUXhTGPSEmb_5-UCCzEaB6n2Mkg",
+      "officer": {
+        "appointments": "/officers/hNUQLeH2UwFsrvlRkX1fDE07xIY/appointments"
+      }
+    },
+    "name": "CARR, Ann",
+    "nationality": "British",
+    "officer_role": "secretary",
+    "resigned_on": "2001-06-29",
+    "person_number": "115622880001"
+  },
+  {
+    "etag": "536c005d123cd8d91edfabddd3bed4916b76eb2e",
+    "address": {
+      "address_line_1": "Heene Road",
+      "locality": "Worthing",
+      "postal_code": "BN11 3AT",
+      "premises": "Mgm House",
+      "region": "West Sussex"
+    },
+    "appointed_on": "2011-01-10",
+    "is_pre_1992_appointment": false,
+    "links": {
+      "self": "/company/00000006/appointments/6WeCN0ckc7Eglygj86L64_4z_dQ",
+      "officer": {
+        "appointments": "/officers/gBFQ6UWJMaHElmlyjzI-f1wH5dA/appointments"
+      }
+    },
+    "name": "ELLIS, Robert Gordon",
+    "officer_role": "secretary",
+    "resigned_on": "2015-06-01",
+    "person_number": "156848420002"
+  },
+  {
+    "etag": "da75ab188861394e561ac5374af0cf6334f6c471",
+    "address": {
+      "address_line_1": "Morrison House",
+      "address_line_2": "Addison Way Great Blakenham",
+      "locality": "Ipswich",
+      "postal_code": "IP6 0RL",
+      "region": "Suffolk"
+    },
+    "appointed_on": "2015-04-17",
+    "is_pre_1992_appointment": false,
+    "country_of_residence": "England",
+    "date_of_birth": {
+      "month": 7,
+      "year": 1979
+    },
+    "links": {
+      "self": "/company/05296680/appointments/8zMNQWwWqNUaIy6bqiaIRUA36LQ",
+      "officer": {
+        "appointments": "/officers/39_UpKVN1yuvu83OJzfHgRsHlPw/appointments"
+      }
+    },
+    "name": "RYAN, Darren Michael",
+    "nationality": "British",
+    "officer_role": "director",
+    "person_number": "106480730003",
+    "identity_verification_details": {
+      "appointment_verification_end_on": "9999-12-31",
+      "appointment_verification_start_on": "2026-03-25"
+    }
+  },
+  {
+    "etag": "42fbbb06f66fe23480d5637f5789d265f84c8cfd",
+    "address": {
+      "address_line_1": "Morrison House",
+      "address_line_2": "Addison Way Great Blakenham",
+      "locality": "Ipswich",
+      "postal_code": "IP6 0RL",
+      "region": "Suffolk"
+    },
+    "appointed_on": "2015-04-17",
+    "is_pre_1992_appointment": false,
+    "country_of_residence": "England",
+    "date_of_birth": {
+      "month": 11,
+      "year": 1978
+    },
+    "links": {
+      "self": "/company/05296680/appointments/db6mVEYp5H1O1gImGjk9MyDzgFM",
+      "officer": {
+        "appointments": "/officers/gY6tU3RSV3eXkUyKinc4X-W-aMc/appointments"
+      }
+    },
+    "name": "STEWARD, Lee Graham",
+    "nationality": "British",
+    "officer_role": "director",
+    "person_number": "106480850002",
+    "identity_verification_details": {
+      "appointment_verification_end_on": "9999-12-31",
+      "appointment_verification_start_on": "2026-03-25"
+    }
+  },
+  {
+    "etag": "1c1b43c9275293c1c0b58431eefe57bda08ec138",
+    "address": {
+      "address_line_1": "Morrison House",
+      "address_line_2": "Addison Way Great Blakenham",
+      "locality": "Ipswich",
+      "postal_code": "IP6 0RL",
+      "region": "Suffolk"
+    },
+    "appointed_on": "2004-12-07",
+    "is_pre_1992_appointment": false,
+    "links": {
+      "self": "/company/05296680/appointments/1hXH_5rmSLOAxl1sClKy21EPxGo",
+      "officer": {
+        "appointments": "/officers/SyaZPr6cdRjdXij4VgzEXS_Xp00/appointments"
+      }
+    },
+    "name": "GORDON, William",
+    "nationality": "British",
+    "officer_role": "secretary",
+    "resigned_on": "2020-10-21",
+    "person_number": "101975540001"
+  },
+  {
+    "etag": "1c1b43c9275293c1c0b58431eefe57bda08ec138",
+    "address": {
+      "address_line_1": "2 Elm Lane",
+      "address_line_2": "Copdock",
+      "locality": "Ipswich",
+      "postal_code": "IP8 3ET",
+      "region": "Suffolk"
+    },
+    "appointed_on": "2004-11-25",
+    "is_pre_1992_appointment": false,
+    "links": {
+      "self": "/company/05296680/appointments/merWRJtKO-0Ftf4XNoMowH2PT60",
+      "officer": {
+        "appointments": "/officers/lWQuKAxAJfvWKhoVDhaXymXZkXc/appointments"
+      }
+    },
+    "name": "LOLOTTE, Karen",
+    "nationality": "British",
+    "officer_role": "secretary",
+    "resigned_on": "2004-12-07",
+    "person_number": "99109340001"
+  },
+  {
+    "etag": "1c1b43c9275293c1c0b58431eefe57bda08ec138",
+    "address": {
+      "address_line_1": "114 Bucklesham Road",
+      "address_line_2": "Purdis Farm",
+      "locality": "Ipswich",
+      "postal_code": "IP3 8TU",
+      "region": "Suffolk"
+    },
+    "appointed_on": "2004-12-07",
+    "is_pre_1992_appointment": false,
+    "country_of_residence": "England",
+    "date_of_birth": {
+      "month": 5,
+      "year": 1958
+    },
+    "links": {
+      "self": "/company/05296680/appointments/I6Bq5Lm752NyqwYACIYSqtdGTMc",
+      "officer": {
+        "appointments": "/officers/-NmEJd8_SD1En3MLH4FMoTbUinA/appointments"
+      }
+    },
+    "name": "LIEBSCHER, Detlef Gerhard",
+    "nationality": "German",
+    "officer_role": "director",
+    "resigned_on": "2015-04-17",
+    "person_number": "27807860003"
+  }
+]

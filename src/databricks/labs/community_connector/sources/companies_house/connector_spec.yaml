@@ -1,0 +1,51 @@
+# Companies House Community Connector Spec
+# This file defines the specification for the Companies House connector including
+# connection parameters and allowlist options.
+
+# ============================================================================
+# Connection Parameters
+# These are provided when creating the Unity Catalog connection.
+# ============================================================================
+connection:
+  # Parameters for HTTP Basic Auth (API key as username)
+  parameters:
+    - name: api_key
+      type: string
+      required: true
+      secret: true
+      description: >
+        Companies House API key. Used as the username in HTTP Basic Authentication
+        (with an empty password). Obtain from the Companies House Developer Portal
+        (https://developer.company-information.service.gov.uk/).
+
+    - name: company_numbers
+      type: string
+      required: true
+      description: >
+        Comma-separated list of UK company registration numbers to ingest.
+        Standard format is 8 characters (zero-padded numeric), but also supports
+        non-standard prefixes such as SC (Scotland), NI (Northern Ireland),
+        OC (Overseas), SO (Scotland Old), IP (Industrial Provident), IC (Community
+        Interest), and R0 (UK Establishments). Example: "00000006,SC123456,NI012345"
+
+    - name: base_url
+      type: string
+      required: false
+      description: >
+        Override the default Companies House API base URL. Defaults to
+        https://api.company-information.service.gov.uk. Only set this if using
+        a custom or proxy endpoint.
+
+# ============================================================================
+# External Options Allowlist
+# These table-specific options must be included in the externalOptionsAllowList
+# parameter of the UC connection to allow them to be passed through.
+# Use a comma-separated string of option names.
+# If no table-specific options are needed, set to empty string or omit.
+#
+# The Companies House connector supports the following table-specific options:
+#   - items_per_page (all paginated tables): override pagination size (1-100)
+#   - category (filing_history): filter by filing category
+#   - register_view (persons_with_significant_control): filter by register view
+# ============================================================================
+external_options_allowlist: "items_per_page,category,register_view"

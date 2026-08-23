@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "endpoints": [
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/00000006",
+      "count": 2,
+      "param_shapes": [
+        []
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/00000006/charges",
+      "count": 2,
+      "param_shapes": [
+        []
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/00000006/filing-history",
+      "count": 6,
+      "param_shapes": [
+        [
+          "items_per_page",
+          "start_index"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/00000006/officers",
+      "count": 2,
+      "param_shapes": [
+        [
+          "items_per_page",
+          "start_index"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/00000006/persons-with-significant-control",
+      "count": 2,
+      "param_shapes": [
+        [
+          "items_per_page",
+          "start_index"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/00000006/registered-office-address",
+      "count": 2,
+      "param_shapes": [
+        []
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/05296680",
+      "count": 2,
+      "param_shapes": [
+        []
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/05296680/charges",
+      "count": 2,
+      "param_shapes": [
+        []
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/05296680/officers",
+      "count": 2,
+      "param_shapes": [
+        [
+          "items_per_page",
+          "start_index"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/05296680/persons-with-significant-control",
+      "count": 2,
+      "param_shapes": [
+        [
+          "items_per_page",
+          "start_index"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/05296680/registered-office-address",
+      "count": 2,
+      "param_shapes": [
+        []
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/07195160",
+      "count": 2,
+      "param_shapes": [
+        []
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/07195160/charges",
+      "count": 2,
+      "param_shapes": [
+        []
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/07195160/filing-history",
+      "count": 4,
+      "param_shapes": [
+        [
+          "items_per_page",
+          "start_index"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/07195160/officers",
+      "count": 2,
+      "param_shapes": [
+        [
+          "items_per_page",
+          "start_index"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/07195160/persons-with-significant-control",
+      "count": 2,
+      "param_shapes": [
+        [
+          "items_per_page",
+          "start_index"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.company-information.service.gov.uk/company/07195160/registered-office-address",
+      "count": 2,
+      "param_shapes": [
+        []
+      ]
+    }
+  ]
+}

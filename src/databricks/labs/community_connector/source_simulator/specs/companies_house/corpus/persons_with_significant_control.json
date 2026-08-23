@@ -1,0 +1,170 @@
+[
+  {
+    "etag": "b605e46660a089645347193456ff0248f16d3a0b",
+    "notified_on": "2017-01-01",
+    "name": "Cognizant Holdings Uk Limited",
+    "links": {
+      "self": "/company/07195160/persons-with-significant-control/corporate-entity/ZItj8JS2UMeC4gdocZyxUMFHn4s"
+    },
+    "identification": {
+      "legal_form": "Private Limited Company",
+      "legal_authority": "England & Wales",
+      "country_registered": "United Kingdom",
+      "place_registered": "Companies House",
+      "registration_number": "10535398"
+    },
+    "ceased": false,
+    "kind": "corporate-entity-person-with-significant-control",
+    "address": {
+      "address_line_1": "Bishopsgate",
+      "country": "United Kingdom",
+      "locality": "London",
+      "postal_code": "EC2M 4AG",
+      "premises": "280"
+    },
+    "natures_of_control": [
+      "ownership-of-shares-75-to-100-percent",
+      "voting-rights-75-to-100-percent",
+      "right-to-appoint-and-remove-directors"
+    ],
+    "description": "The company is jointly owned by three shareholders under a subscription agreement dated 2017-01-01.",
+    "is_sanctioned": false,
+    "ceased_on": "2024-06-30",
+    "country_of_residence": "United Kingdom",
+    "nationality": "British",
+    "date_of_birth": {
+      "month": 6,
+      "year": 1968
+    },
+    "name_elements": {
+      "title": "Dr",
+      "forename": "Alexander",
+      "middle_name": "James",
+      "surname": "Cognizant"
+    }
+  },
+  {
+    "etag": "a72178f4b1b4376e2c3a14bf75e87a42ec8820f6",
+    "notified_on": "2016-04-06",
+    "ceased_on": "2017-01-01",
+    "name": "Cognizant Technology Solutions Corporation",
+    "links": {
+      "self": "/company/07195160/persons-with-significant-control/corporate-entity/LDAnyuYY31NlpVfcOIrmlFNrrI4"
+    },
+    "identification": {
+      "legal_form": "Corporation",
+      "legal_authority": "United States"
+    },
+    "ceased": true,
+    "kind": "corporate-entity-person-with-significant-control",
+    "address": {
+      "country": "Usa",
+      "locality": "Teaneck",
+      "premises": "500 Frank W Burr Boulevard",
+      "region": "New Jersey 07666"
+    },
+    "natures_of_control": [
+      "ownership-of-shares-75-to-100-percent-as-firm",
+      "voting-rights-75-to-100-percent-as-firm",
+      "right-to-appoint-and-remove-directors-as-firm"
+    ]
+  },
+  {
+    "etag": "dc0317e8d63ccc8cdaca33c4740bf35a12e61280",
+    "notified_on": "2016-04-06",
+    "ceased_on": "2016-04-06",
+    "country_of_residence": "England",
+    "date_of_birth": {
+      "month": 11,
+      "year": 1978
+    },
+    "name": "Mr Lee Graham Steward",
+    "name_elements": {
+      "title": "Mr",
+      "surname": "Steward",
+      "forename": "Lee",
+      "middle_name": "Graham"
+    },
+    "links": {
+      "self": "/company/05296680/persons-with-significant-control/individual/dO35Uuz8NoXtqeHrTeIW3xlV8jM"
+    },
+    "nationality": "British",
+    "ceased": true,
+    "kind": "individual-person-with-significant-control",
+    "address": {
+      "address_line_1": "Addison Way",
+      "address_line_2": "Great Blakenham",
+      "country": "England",
+      "locality": "Ipswich",
+      "postal_code": "IP6 0RL",
+      "premises": "Morrison House"
+    },
+    "natures_of_control": [
+      "significant-influence-or-control"
+    ]
+  },
+  {
+    "etag": "ed61e81671a4040787b7b9eea60efd372c9ab0ad",
+    "notified_on": "2016-04-06",
+    "ceased_on": "2016-04-06",
+    "country_of_residence": "England",
+    "date_of_birth": {
+      "month": 7,
+      "year": 1979
+    },
+    "name": "Mr Darren Michael Ryan",
+    "name_elements": {
+      "title": "Mr",
+      "surname": "Ryan",
+      "forename": "Darren",
+      "middle_name": "Michael"
+    },
+    "links": {
+      "self": "/company/05296680/persons-with-significant-control/individual/-Qo1HJrxWaM8IHYNAwZJLku1CQ8"
+    },
+    "nationality": "British",
+    "ceased": true,
+    "kind": "individual-person-with-significant-control",
+    "address": {
+      "address_line_1": "Addison Way",
+      "address_line_2": "Great Blakenham",
+      "country": "England",
+      "locality": "Ipswich",
+      "postal_code": "IP6 0RL",
+      "premises": "Morrison House"
+    },
+    "natures_of_control": [
+      "significant-influence-or-control"
+    ]
+  },
+  {
+    "etag": "5205393ba43e8e341c2a3c0580bf6fc82d29cc5b",
+    "notified_on": "2016-04-06",
+    "name": "Morrison Group Limited",
+    "links": {
+      "self": "/company/05296680/persons-with-significant-control/corporate-entity/IcaBfEMcyEPPqkVIrs1kNuvjWsc"
+    },
+    "identification": {
+      "legal_form": "Private Limited Company",
+      "legal_authority": "Companies Act 2006",
+      "country_registered": "England",
+      "place_registered": "Companies House",
+      "registration_number": "09460478"
+    },
+    "ceased": false,
+    "kind": "corporate-entity-person-with-significant-control",
+    "address": {
+      "address_line_1": "Addison Way",
+      "address_line_2": "Great Blakenham",
+      "country": "England",
+      "locality": "Ipswich",
+      "postal_code": "IP6 0RL",
+      "premises": "Morrison House"
+    },
+    "natures_of_control": [
+      "ownership-of-shares-75-to-100-percent",
+      "voting-rights-75-to-100-percent",
+      "right-to-appoint-and-remove-directors"
+    ]
+  }
+]

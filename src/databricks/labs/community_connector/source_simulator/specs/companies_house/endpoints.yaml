@@ -1,0 +1,120 @@
+# Companies House UK Public Data API — endpoints exercised by the connector.
+#
+# Base URL: https://api.company-information.service.gov.uk
+# Auth:     HTTP Basic Auth (api_key as username, empty password) — the
+#           simulator ignores auth headers so no stub needed.
+#
+# Response shapes:
+#   * company_profile              -> single JSON object (single_entity)
+#   * registered_office_address    -> single JSON object (single_entity)
+#   * charges                      -> {"items": [...], "total_count": N, ...}
+#                                     Non-paginated list.
+#   * officers / filing_history /  -> {"items": [...], "start_index": N,
+#     persons_with_significant_        "items_per_page": M, "total_results": T,
+#     control                          ...}
+#                                     Offset-based pagination with
+#                                     ``start_index`` (offset) and
+#                                     ``items_per_page`` (limit).
+#
+# All list endpoints return a wrapper with ``items`` as the records array;
+# we ignore the extra envelope keys (kind, etag, active_count, ...) because
+# the connector only reads ``items`` and the pagination totals.
+#
+# All six tables are snapshot reads keyed by company_number. The connector
+# caps ``latest_offset`` at ``_init_time`` so Trigger.AvailableNow
+# terminates naturally; no ``synthesize_future_records`` is needed because
+# the API has no cursor to advance past.
+
+endpoints:
+  # ----------------------------------------------------------------------
+  # Single-object endpoints
+  # ----------------------------------------------------------------------
+
+  - path: "/company/{company_number}"
+    method: GET
+    corpus: company_profile
+    response:
+      single_entity: true
+      pagination_style: none
+
+  - path: "/company/{company_number}/registered-office-address"
+    method: GET
+    corpus: registered_office_address
+    response:
+      single_entity: true
+      pagination_style: none
+
+  # ----------------------------------------------------------------------
+  # Non-paginated list endpoint
+  # ----------------------------------------------------------------------
+
+  - path: "/company/{company_number}/charges"
+    method: GET
+    corpus: charges
+    response:
+      pagination_style: none
+      wrapper:
+        records_key: items
+        extras:
+          total_count: 0
+          unfiletered_count: 0
+          satisfied_count: 0
+          part_satisfied_count: 0
+        ignore_extra_keys: true
+
+  # ----------------------------------------------------------------------
+  # Offset-paginated list endpoints
+  # ----------------------------------------------------------------------
+
+  - path: "/company/{company_number}/officers"
+    method: GET
+    corpus: officers
+    response:
+      pagination_style: offset_limit
+      wrapper:
+        records_key: items
+        extras:
+          active_count: 0
+          resigned_count: 0
+          total_results: 0
+          kind: officer-list
+        ignore_extra_keys: true
+    params:
+      start_index:    {role: offset}
+      items_per_page: {role: limit, default: 35, max: 100}
+      order_by:       {role: ignore}
+      register_view:  {role: ignore}
+
+  - path: "/company/{company_number}/filing-history"
+    method: GET
+    corpus: filing_history
+    response:
+      pagination_style: offset_limit
+      wrapper:
+        records_key: items
+        extras:
+          total_count: 0
+          filing_history_status: filing-history-available
+          kind: filing-history
+        ignore_extra_keys: true
+    params:
+      start_index:    {role: offset}
+      items_per_page: {role: limit, default: 25, max: 100}
+      category:       {role: filter, field: category, op: eq}
+
+  - path: "/company/{company_number}/persons-with-significant-control"
+    method: GET
+    corpus: persons_with_significant_control
+    response:
+      pagination_style: offset_limit
+      wrapper:
+        records_key: items
+        extras:
+          active_count: 0
+          ceased_count: 0
+          total_results: 0
+        ignore_extra_keys: true
+    params:
+      start_index:    {role: offset}
+      items_per_page: {role: limit, default: 25, max: 100}
+      register_view:  {role: ignore}

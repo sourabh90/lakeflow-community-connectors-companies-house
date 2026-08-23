@@ -1,0 +1,16 @@
+{
+  "etag": "dadf1ecb26089666cd18069eb4dd9c1d5a11ab5f",
+  "kind": "registered-office-address",
+  "links": {
+    "self": "/company/05296680/registered-office-address"
+  },
+  "premises": "Morrison House",
+  "address_line_1": "1 Addison Way",
+  "address_line_2": "Great Blakenham",
+  "locality": "Ipswich",
+  "region": "Suffolk",
+  "postal_code": "IP6 0RL",
+  "country": "United Kingdom",
+  "care_of": "Company Secretary",
+  "po_box": "PO Box 123"
+}

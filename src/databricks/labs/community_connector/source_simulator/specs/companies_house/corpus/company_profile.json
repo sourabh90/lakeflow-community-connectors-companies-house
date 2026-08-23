@@ -1,0 +1,80 @@
+{
+  "accounts": {
+    "accounting_reference_date": {
+      "day": 31,
+      "month": 7
+    },
+    "last_accounts": {
+      "made_up_to": "2025-07-31",
+      "period_end_on": "2025-07-31",
+      "period_start_on": "2024-08-01",
+      "type": "full"
+    },
+    "next_accounts": {
+      "due_on": "2027-04-30",
+      "overdue": false,
+      "period_end_on": "2026-07-31",
+      "period_start_on": "2025-08-01"
+    },
+    "next_due": "2027-04-30",
+    "next_made_up_to": "2026-07-31",
+    "overdue": false
+  },
+  "can_file": true,
+  "company_name": "MORRISON FREIGHT HOLDINGS LIMITED",
+  "company_number": "05296680",
+  "company_status": "active",
+  "company_status_detail": "active-proposal-to-strike-off",
+  "confirmation_statement": {
+    "last_made_up_to": "2026-03-15",
+    "next_due": "2027-03-29",
+    "next_made_up_to": "2027-03-15",
+    "overdue": false
+  },
+  "date_of_creation": "2004-11-25",
+  "date_of_cessation": "2026-08-01",
+  "etag": "dadf1ecb26089666cd18069eb4dd9c1d5a11ab5f",
+  "has_been_liquidated": false,
+  "has_charges": false,
+  "has_insolvency_history": false,
+  "jurisdiction": "england-wales",
+  "last_full_members_list_date": "2015-11-25",
+  "links": {
+    "persons_with_significant_control": "/company/05296680/persons-with-significant-control",
+    "self": "/company/05296680",
+    "charges": "/company/05296680/charges",
+    "filing_history": "/company/05296680/filing-history",
+    "officers": "/company/05296680/officers"
+  },
+  "registered_office_address": {
+    "address_line_1": "Morrison House",
+    "address_line_2": "Addison Way Great Blakenham",
+    "locality": "Ipswich",
+    "postal_code": "IP6 0RL",
+    "region": "Suffolk"
+  },
+  "registered_office_is_in_dispute": false,
+  "sic_codes": [
+    "64204"
+  ],
+  "subtype": "community-interest-company",
+  "type": "ltd",
+  "undeliverable_registered_office_address": false,
+  "has_super_secure_pscs": false,
+  "super_secure_managing_officer_count": 0,
+  "is_community_interest_company": true,
+  "external_registration_number": "EXT-9182734",
+  "partial_data_available": "full-data-available-from-financial-conduct-authority",
+  "previous_company_names": [
+    {
+      "name": "MORRISON FREIGHT SERVICES LIMITED",
+      "effective_from": "2001-06-01",
+      "ceased_on": "2004-11-24"
+    }
+  ],
+  "branch_company_details": {
+    "business_activity": "Freight forwarding",
+    "parent_company_name": "MORRISON GROUP INTERNATIONAL AG",
+    "parent_company_number": "CH-020.3.912.443-9"
+  }
+}

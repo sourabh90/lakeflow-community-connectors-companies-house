@@ -1,0 +1,224 @@
+[
+  {
+    "etag": "190c82f1a0ef0215d39af36d8140bfc4149663bc",
+    "id": "BYo3CBfV8tc7R5ukYRFdZ5d1PgM",
+    "charge_code": "071951600001",
+    "classification": {
+      "type": "charge-description",
+      "description": "Rent deposit deed"
+    },
+    "charge_number": 1,
+    "status": "outstanding",
+    "delivered_on": "2010-08-05",
+    "created_on": "2010-08-03",
+    "acquired_on": "2011-02-14",
+    "satisfied_on": "2018-06-30",
+    "resolved_on": "2019-01-15",
+    "covering_instrument_date": "2010-07-30",
+    "more_than_four_persons_entitled": false,
+    "assests_ceased_released": "part-property-released",
+    "particulars": {
+      "type": "short-particulars",
+      "description": "As security for the payment of the liabilities with full title guarantee by way of first fixed charge assigned all its rights under the rent deposit deed relating to a lease of part third floor haymarket house 28/29 haymarket london see image for full details.",
+      "contains_fixed_charge": true,
+      "contains_floating_charge": false,
+      "contains_negative_pledge": true,
+      "floating_charge_covers_all": false
+    },
+    "secured_details": {
+      "type": "amount-secured",
+      "description": "All monies due or to become due from the company to the chargee under the terms of the aforementioned instrument creating or evidencing the charge"
+    },
+    "persons_entitled": [
+      {
+        "name": "Ls Victoria Properties Limited"
+      }
+    ],
+    "transactions": [
+      {
+        "filing_type": "create-charge-pre-april-2013",
+        "delivered_on": "2010-08-05",
+        "links": {
+          "filing": "/company/07195160/filing-history/MzAyMTMzNjMzMWFkaXF6a2N4"
+        }
+      }
+    ],
+    "scottish_alterations": {
+      "type": "scottish-alteration",
+      "description": "Alteration to floating charge — additional prohibitions inserted per Scottish Companies Act.",
+      "has_alterations_to_order": false,
+      "has_alterations_to_prohibitions": true,
+      "has_alterations_to_provisions": false
+    },
+    "links": {
+      "self": "/company/07195160/charges/BYo3CBfV8tc7R5ukYRFdZ5d1PgM"
+    }
+  },
+  {
+    "etag": "05d5789bc3d5ec876ae7dfdd1b1cec2fd3390266",
+    "classification": {
+      "type": "charge-description",
+      "description": "Security agreement"
+    },
+    "charge_number": 1,
+    "status": "outstanding",
+    "delivered_on": "2010-05-17",
+    "created_on": "2010-04-28",
+    "particulars": {
+      "type": "short-particulars",
+      "description": "With full title guarantee as a first fixed charge as a continuing security for the secured liabilities all of its present and future right, title and interest in and to all stocks, shares, bonds and securities of any kind whatsoever see image for full details."
+    },
+    "secured_details": {
+      "type": "amount-secured",
+      "description": "All monies due or to become due from the company to the chargee on any account whatsoever under the terms of the aforementioned instrument creating or evidencing the charge"
+    },
+    "persons_entitled": [
+      {
+        "name": "Pacific Life Re Limited"
+      }
+    ],
+    "transactions": [
+      {
+        "filing_type": "create-charge-pre-april-2013",
+        "delivered_on": "2010-05-17",
+        "links": {
+          "filing": "/company/00000006/filing-history/MzAxNTg2NzUyOGFkaXF6a2N4"
+        }
+      }
+    ],
+    "links": {
+      "self": "/company/00000006/charges/ePJoJ_HFbPhyofAAMx3pUhegSjA"
+    }
+  },
+  {
+    "etag": "ee014d6768d5c2d753892f1c4e3e34d77e7a3198",
+    "charge_code": "052966800003",
+    "classification": {
+      "type": "charge-description",
+      "description": "A registered charge"
+    },
+    "charge_number": 3,
+    "status": "fully-satisfied",
+    "delivered_on": "2015-04-25",
+    "created_on": "2015-04-17",
+    "satisfied_on": "2018-07-19",
+    "particulars": {
+      "contains_floating_charge": true,
+      "contains_fixed_charge": true,
+      "floating_charge_covers_all": true,
+      "contains_negative_pledge": true
+    },
+    "persons_entitled": [
+      {
+        "name": "Mr D Liebscher"
+      }
+    ],
+    "transactions": [
+      {
+        "filing_type": "create-charge-with-deed",
+        "delivered_on": "2015-04-25",
+        "links": {
+          "filing": "/company/05296680/filing-history/MzEyMjMxNzg1OWFkaXF6a2N4"
+        }
+      },
+      {
+        "filing_type": "charge-satisfaction",
+        "delivered_on": "2018-07-19",
+        "links": {
+          "filing": "/company/05296680/filing-history/MzIxMDExNjc1M2FkaXF6a2N4"
+        }
+      }
+    ],
+    "links": {
+      "self": "/company/05296680/charges/K0Hz7JSCQflx4hCKW4lN_ST-bpE"
+    }
+  },
+  {
+    "etag": "d18247b6859024374bab308f8548dc63207f8bdf",
+    "classification": {
+      "type": "charge-description",
+      "description": "Legal mortgage"
+    },
+    "charge_number": 2,
+    "status": "fully-satisfied",
+    "delivered_on": "2005-04-02",
+    "created_on": "2005-03-30",
+    "satisfied_on": "2014-04-24",
+    "particulars": {
+      "type": "short-particulars",
+      "description": "F/H morrison house addison way great blakeham ipswich. With the benefit of all rights licences guarantees rent deposits contracts deeds undertakings and warranties relating. To the property any shares or membership rights in any management company for the property any goodwill of any business from time to time carried on at the property any rental and other money payable under any lease licence or other interest created in respect of the property and all other payments whatever in respect of the property."
+    },
+    "secured_details": {
+      "type": "amount-secured",
+      "description": "All monies due or to become due from the company to the chargee on any account whatsoever"
+    },
+    "persons_entitled": [
+      {
+        "name": "Hsbc Bank PLC"
+      }
+    ],
+    "transactions": [
+      {
+        "filing_type": "create-charge-pre-2006-companies-act",
+        "delivered_on": "2005-04-02",
+        "links": {
+          "filing": "/company/05296680/filing-history/MDA0NjcxOTc5MWFkaXF6a2N4"
+        }
+      },
+      {
+        "filing_type": "charge-satisfaction",
+        "delivered_on": "2014-04-24",
+        "links": {
+          "filing": "/company/05296680/filing-history/MzA5ODc0Njg4M2FkaXF6a2N4"
+        }
+      }
+    ],
+    "links": {
+      "self": "/company/05296680/charges/4hT3BTbAr-1xQPQpfHOVYUJVeoo"
+    }
+  },
+  {
+    "etag": "7687c8e149fb2d6c8a5194dae9fddc23fcad089a",
+    "classification": {
+      "type": "charge-description",
+      "description": "Debenture"
+    },
+    "charge_number": 1,
+    "status": "fully-satisfied",
+    "delivered_on": "2005-01-05",
+    "created_on": "2004-12-31",
+    "satisfied_on": "2014-04-24",
+    "particulars": {
+      "type": "short-particulars",
+      "description": "Fixed and floating charges over the undertaking and all property and assets present and future including goodwill bookdebts uncalled capital buildings fixtures fixed plant and machinery."
+    },
+    "secured_details": {
+      "type": "amount-secured",
+      "description": "All monies due or to become due from the company to the chargee on any account whatsoever"
+    },
+    "persons_entitled": [
+      {
+        "name": "Hsbc Bank PLC"
+      }
+    ],
+    "transactions": [
+      {
+        "filing_type": "create-charge-pre-2006-companies-act",
+        "delivered_on": "2005-01-05",
+        "links": {
+          "filing": "/company/05296680/filing-history/MDA4MzQ5NDc0MmFkaXF6a2N4"
+        }
+      },
+      {
+        "filing_type": "charge-satisfaction",
+        "delivered_on": "2014-04-24",
+        "links": {
+          "filing": "/company/05296680/filing-history/MzA5ODc0Njk5MGFkaXF6a2N4"
+        }
+      }
+    ],
+    "links": {
+      "self": "/company/05296680/charges/W1msgSvozoPQQ4OXLHyY4-7hGco"
+    }
+  }
+]
