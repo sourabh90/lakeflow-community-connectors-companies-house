@@ -20,13 +20,14 @@ connection:
 
     - name: company_numbers
       type: string
-      required: true
+      required: false
       description: >
         Comma-separated list of UK company registration numbers to ingest.
         Standard format is 8 characters (zero-padded numeric), but also supports
         non-standard prefixes such as SC (Scotland), NI (Northern Ireland),
         OC (Overseas), SO (Scotland Old), IP (Industrial Provident), IC (Community
         Interest), and R0 (UK Establishments). Example: "00000006,SC123456,NI012345"
+        Required unless company_numbers_table is set.
 
     - name: base_url
       type: string
@@ -35,6 +36,40 @@ connection:
         Override the default Companies House API base URL. Defaults to
         https://api.company-information.service.gov.uk. Only set this if using
         a custom or proxy endpoint.
+
+    - name: company_numbers_table
+      type: string
+      required: false
+      description: >
+        Fully-qualified Unity Catalog table (catalog.schema.table) with a
+        company_number string column, used as an alternative to the static
+        company_numbers option. When set, the connector looks up the current
+        watchlist from this table on every pipeline run via the Databricks SQL
+        Statement Execution API, so users can maintain the list by editing the
+        table instead of updating the connection. Requires databricks_host,
+        databricks_token, and warehouse_id.
+
+    - name: databricks_host
+      type: string
+      required: false
+      description: >
+        Workspace URL (e.g. https://xxx.cloud.databricks.com), used only to
+        query company_numbers_table. Required if company_numbers_table is set.
+
+    - name: databricks_token
+      type: string
+      required: false
+      secret: true
+      description: >
+        Databricks personal access token with SELECT on company_numbers_table
+        and CAN_USE on warehouse_id. Required if company_numbers_table is set.
+
+    - name: warehouse_id
+      type: string
+      required: false
+      description: >
+        SQL warehouse ID used to run the company_numbers_table lookup query.
+        Required if company_numbers_table is set.
 
 # ============================================================================
 # External Options Allowlist
@@ -47,5 +82,7 @@ connection:
 #   - items_per_page (all paginated tables): override pagination size (1-100)
 #   - category (filing_history): filter by filing category
 #   - register_view (persons_with_significant_control): filter by register view
+#   - pipeline_name (all tables): stamped into the _ingested_by audit column
+#     on every record; falls back to a fixed connector identifier if omitted
 # ============================================================================
-external_options_allowlist: "items_per_page,category,register_view"
+external_options_allowlist: "items_per_page,category,register_view,pipeline_name"

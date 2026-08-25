@@ -13,6 +13,18 @@ Design notes:
       explicit typing.
     - Each list endpoint gets a connector-injected ``company_number`` field
       because the item envelopes do not carry it.
+    - Every table also gets connector-injected audit columns (see
+      ``_read_records_for_company`` in ``companies_house.py``):
+      ``_ingested_at`` (fetch timestamp), ``_ingested_by`` (the ingesting
+      pipeline name, if passed via the ``pipeline_name`` table option;
+      otherwise a fixed connector identifier — there is no per-request
+      human identity available inside a Spark Python Data Source worker),
+      ``_source_api_url`` (the Companies House endpoint the record for
+      that company_number/table was fetched from), and
+      ``_source_record_url`` (the item's own ``links.self`` from the API
+      response, when present — the API's resource identifier for that
+      specific record, used as part of the primary key for officers,
+      persons_with_significant_control, and charges; see TABLE_METADATA).
 """
 
 from pyspark.sql.types import (
@@ -22,7 +34,16 @@ from pyspark.sql.types import (
     StringType,
     StructField,
     StructType,
+    TimestampType,
 )
+
+# Appended to every table schema — see module docstring.
+AUDIT_FIELDS = [
+    StructField("_ingested_at", TimestampType(), True),
+    StructField("_ingested_by", StringType(), True),
+    StructField("_source_api_url", StringType(), True),
+    StructField("_source_record_url", StringType(), True),
+]
 
 
 # =============================================================================
@@ -546,14 +567,17 @@ CHARGES_SCHEMA = StructType(
 # =============================================================================
 
 TABLE_SCHEMAS: dict[str, StructType] = {
-    "company_profile": COMPANY_PROFILE_SCHEMA,
-    "officers": OFFICERS_SCHEMA,
-    "filing_history": FILING_HISTORY_SCHEMA,
-    "persons_with_significant_control": PERSONS_WITH_SIGNIFICANT_CONTROL_SCHEMA,
-    "charges": CHARGES_SCHEMA,
-    "registered_office_address": REGISTERED_OFFICE_ADDRESS_SCHEMA,
+    "company_profile": StructType(COMPANY_PROFILE_SCHEMA.fields + AUDIT_FIELDS),
+    "officers": StructType(OFFICERS_SCHEMA.fields + AUDIT_FIELDS),
+    "filing_history": StructType(FILING_HISTORY_SCHEMA.fields + AUDIT_FIELDS),
+    "persons_with_significant_control": StructType(
+        PERSONS_WITH_SIGNIFICANT_CONTROL_SCHEMA.fields + AUDIT_FIELDS
+    ),
+    "charges": StructType(CHARGES_SCHEMA.fields + AUDIT_FIELDS),
+    "registered_office_address": StructType(REGISTERED_OFFICE_ADDRESS_SCHEMA.fields + AUDIT_FIELDS),
 }
-"""Mapping of table names to their StructType schemas."""
+"""Mapping of table names to their StructType schemas. Every schema has the
+``_ingested_at`` / ``_ingested_by`` audit columns appended — see AUDIT_FIELDS."""
 
 
 TABLE_METADATA: dict[str, dict] = {
@@ -563,8 +587,11 @@ TABLE_METADATA: dict[str, dict] = {
         "ingestion_type": "snapshot",
     },
     "officers": {
-        # No stable single-field unique ID in the REST envelope.
-        "primary_keys": ["company_number", "name", "appointed_on", "officer_role"],
+        # (name, appointed_on, officer_role) is not reliably unique — the
+        # live API has returned two distinct appointments sharing all
+        # three. _source_record_url (the item's own links.self) is the
+        # API's actual resource identifier for one appointment.
+        "primary_keys": ["company_number", "_source_record_url"],
         "cursor_field": None,
         "ingestion_type": "snapshot",
     },
@@ -574,12 +601,17 @@ TABLE_METADATA: dict[str, dict] = {
         "ingestion_type": "snapshot",
     },
     "persons_with_significant_control": {
-        "primary_keys": ["company_number", "notified_on", "name", "kind"],
+        # (notified_on, name, kind) is not reliably unique — same rationale
+        # as officers above.
+        "primary_keys": ["company_number", "_source_record_url"],
         "cursor_field": None,
         "ingestion_type": "snapshot",
     },
     "charges": {
-        "primary_keys": ["company_number", "id"],
+        # The live API has returned charge items with a null 'id' field,
+        # so (company_number, id) collides across a company's charges.
+        # _source_record_url (the item's own links.self) is unique per charge.
+        "primary_keys": ["company_number", "_source_record_url"],
         "cursor_field": None,
         "ingestion_type": "snapshot",
     },

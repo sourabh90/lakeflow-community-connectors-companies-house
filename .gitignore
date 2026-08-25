@@ -50,6 +50,10 @@ Thumbs.db
 # Dev config
 tests/unit/sources/*/configs/dev_config.json
 
+# companies_house auth_test.py defaults to a repo-root credentials.json when
+# CONNECTOR_TEST_CONFIG_JSON/_PATH aren't set — never let a live api_key land here.
+/credentials.json
+
 # Replay config — fake credentials for simulate/replay mode. The canonical
 # source is the ``replay_config`` class attribute on each test class
 # (``LakeflowConnectTests`` writes them there); this glob lets contributors

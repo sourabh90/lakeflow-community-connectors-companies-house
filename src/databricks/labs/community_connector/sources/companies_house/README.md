@@ -38,14 +38,65 @@ Provide the following **connection-level** options when configuring the connecto
 | Name | Type | Required | Description | Example |
 |---|---|---|---|---|
 | `api_key` | string (secret) | yes | Companies House Public Data API key. Used as the username in HTTP Basic Auth with an empty password. | `abcd1234-ab12-cd34-ef56-abcdef123456` |
-| `company_numbers` | string | yes | Comma-separated list of UK company registration numbers to ingest. Purely numeric numbers are auto zero-padded to 8 characters (e.g. `6` becomes `00000006`). Alpha-prefixed numbers (`SC`, `NI`, `OC`, `SO`, `IP`, `IC`, `R0`) are passed through as-is and must already be correctly formatted. | `00000006,SC123456,NI012345` |
+| `company_numbers` | string | conditional | Comma-separated list of UK company registration numbers to ingest. Purely numeric numbers are auto zero-padded to 8 characters (e.g. `6` becomes `00000006`). Alpha-prefixed numbers (`SC`, `NI`, `OC`, `SO`, `IP`, `IC`, `R0`) are passed through as-is and must already be correctly formatted. Required unless `company_numbers_table` is set. | `00000006,SC123456,NI012345` |
 | `base_url` | string | no | Override the Companies House API base URL. Defaults to `https://api.company-information.service.gov.uk`. Only set for a proxy or non-production endpoint. | `https://api.company-information.service.gov.uk` |
-| `externalOptionsAllowList` | string | conditional | Comma-separated list of table-specific option names that are allowed to be passed through to the connector. Only required if you plan to override defaults via table options (see below). | `items_per_page,category,register_view` |
+| `company_numbers_table` | string | no | Fully-qualified UC table (`catalog.schema.table`) with a `company_number` string column, used **instead of** `company_numbers`. See [Reference-Table Watchlist](#reference-table-watchlist-alternative-to-company_numbers) below. Requires `databricks_host`, `databricks_token`, `warehouse_id`. | `main.raw_reference.company_numbers` |
+| `databricks_host` | string | conditional | Workspace URL, used only to query `company_numbers_table`. Required if `company_numbers_table` is set. | `https://xxx.cloud.databricks.com` |
+| `databricks_token` | string (secret) | conditional | Databricks PAT with `SELECT` on `company_numbers_table` and `CAN_USE` on `warehouse_id`. Required if `company_numbers_table` is set. | — |
+| `warehouse_id` | string | conditional | SQL warehouse ID used to run the `company_numbers_table` lookup query. Required if `company_numbers_table` is set. | `d84369d67ab84390` |
+| `externalOptionsAllowList` | string | conditional | Comma-separated list of table-specific option names that are allowed to be passed through to the connector. Only required if you plan to override defaults via table options (see below). | `items_per_page,category,register_view,pipeline_name` |
 
 The full list of supported table-specific options for `externalOptionsAllowList` is:
-`items_per_page,category,register_view`
+`items_per_page,category,register_view,pipeline_name`
 
 > **Note**: Table-specific options such as `items_per_page`, `category`, and `register_view` are **not** connection parameters. They are provided per-table via `table_configuration` in the pipeline spec. Their names must be included in `externalOptionsAllowList` for the connection to allow them to reach the connector.
+
+### Reference-Table Watchlist (alternative to `company_numbers`)
+
+Instead of a fixed `company_numbers` string on the connection, you can point the
+connector at a UC table that users maintain (add/remove rows) without ever
+touching the connection:
+
+```sql
+CREATE TABLE IF NOT EXISTS main.raw_reference.company_numbers (
+  company_number STRING
+);
+INSERT INTO main.raw_reference.company_numbers VALUES
+  ('07195160'), ('FC023246'), ('BR007627');
+```
+
+Optionally, add `inserted_at`/`inserted_by` audit columns so it's clear who
+added each company and when — Delta doesn't allow a `DEFAULT` on a column in
+the same statement that adds it, so this is two steps:
+
+```sql
+ALTER TABLE main.raw_reference.company_numbers
+  ADD COLUMNS (inserted_at TIMESTAMP, inserted_by STRING);
+ALTER TABLE main.raw_reference.company_numbers
+  SET TBLPROPERTIES ('delta.feature.allowColumnDefaults' = 'supported');
+ALTER TABLE main.raw_reference.company_numbers
+  ALTER COLUMN inserted_at SET DEFAULT current_timestamp();
+ALTER TABLE main.raw_reference.company_numbers
+  ALTER COLUMN inserted_by SET DEFAULT current_user();
+```
+
+After this, a plain `INSERT INTO ... VALUES ('12345678')` auto-stamps both
+columns — no need to specify them per insert.
+
+Then set on the connection: `company_numbers_table=main.raw_reference.company_numbers`,
+plus `databricks_host`, `databricks_token`, and `warehouse_id`.
+
+The connector queries `SELECT company_number FROM <company_numbers_table>` via
+the Databricks SQL Statement Execution API **once per pipeline run** (not per
+company) — it runs inside Spark Python Data Source workers and, like the rest
+of the connector, never uses SparkSession or `dbutils` directly. Editing the
+table takes effect on the next run; no connection update or pipeline update
+needed. If both `company_numbers` and `company_numbers_table` are set,
+`company_numbers_table` wins.
+
+`databricks_token` needs `SELECT` on the reference table and `CAN_USE` on the
+warehouse — nothing more. Rotate it the same way as `api_key`, via
+`update_connection`.
 
 ### Obtaining the Required Parameters
 
@@ -65,7 +116,7 @@ A Unity Catalog connection for this connector can be created in two ways via the
 
 1. Follow the **Lakeflow Community Connector** UI flow from the **Add Data** page.
 2. Select any existing Lakeflow Community Connector connection for this source, or create a new one and supply `api_key`, `company_numbers`, and (optionally) `base_url`.
-3. If you intend to use any of the table-specific options (`items_per_page`, `category`, `register_view`), set `externalOptionsAllowList` to `items_per_page,category,register_view`.
+3. If you intend to use any of the table-specific options (`items_per_page`, `category`, `register_view`, `pipeline_name`), set `externalOptionsAllowList` to `items_per_page,category,register_view,pipeline_name`.
 
 The connection can also be created using the standard Unity Catalog API.
 
@@ -77,15 +128,15 @@ The Companies House connector exposes a **static list** of six tables. All are `
 |---|---|---|---|---|
 | `company_profile` | Headline company record: name, status, type, jurisdiction, SIC codes, accounts and confirmation-statement filing deadlines, inline registered office address, and navigation links to related resources. | `GET /company/{company_number}` | `snapshot` | `company_number` |
 | `registered_office_address` | Current registered office address, returned as a standalone record. Useful when tracking address changes independently from the full profile. | `GET /company/{company_number}/registered-office-address` | `snapshot` | `company_number` |
-| `officers` | Directors, secretaries, LLP members, and other officers, both currently appointed and resigned. Includes service address, nationality, occupation, partial date of birth for natural persons, and identification details for corporate officers. | `GET /company/{company_number}/officers` | `snapshot` | `(company_number, name, appointed_on, officer_role)` |
+| `officers` | Directors, secretaries, LLP members, and other officers, both currently appointed and resigned. Includes service address, nationality, occupation, partial date of birth for natural persons, and identification details for corporate officers. | `GET /company/{company_number}/officers` | `snapshot` | `(company_number, _source_record_url)` |
 | `filing_history` | Every document ever filed by the company with Companies House: accounts, confirmation statements, appointment / resignation notices, resolutions, address changes, mortgages, etc. | `GET /company/{company_number}/filing-history` | `snapshot` | `(company_number, transaction_id)` |
-| `persons_with_significant_control` | UK Persons with Significant Control (PSC) register — beneficial owners and controlling parties, including natures of control, partial date of birth (natural persons), and identification (corporate / legal-person PSCs). | `GET /company/{company_number}/persons-with-significant-control` | `snapshot` | `(company_number, notified_on, name, kind)` |
-| `charges` | Registered mortgages and other charges over the company's assets — creation, satisfaction, and secured details. | `GET /company/{company_number}/charges` | `snapshot` | `(company_number, id)` |
+| `persons_with_significant_control` | UK Persons with Significant Control (PSC) register — beneficial owners and controlling parties, including natures of control, partial date of birth (natural persons), and identification (corporate / legal-person PSCs). | `GET /company/{company_number}/persons-with-significant-control` | `snapshot` | `(company_number, _source_record_url)` |
+| `charges` | Registered mortgages and other charges over the company's assets — creation, satisfaction, and secured details. | `GET /company/{company_number}/charges` | `snapshot` | `(company_number, _source_record_url)` |
 
 ### Notes on primary keys
 
 - The list endpoints for `officers`, `filing_history`, `persons_with_significant_control`, and `charges` do **not** include the `company_number` in each item. The connector injects `company_number` on every row before writing so the compound primary keys shown above are meaningful.
-- `officers` and `persons_with_significant_control` do not have a single stable unique identifier in the REST envelope; the connector uses a composite key. Override with `primary_keys` in `table_configuration` if your downstream model requires a different key.
+- `officers`, `persons_with_significant_control`, and `charges` do **not** have a reliably unique business key in the live API response — visible fields like `(name, appointed_on, officer_role)` or `(notified_on, name, kind)` have been observed to collide across two distinct records for the same company, and `charges.id` has been observed `null`. The connector uses `_source_record_url` instead (see [Audit Columns](#audit-columns)) — the item's own `links.self` from the API, falling back to a positional id if `links.self` is absent, so it's always unique within one company's fetch. Override with `primary_keys` in `table_configuration` if your downstream model requires a different key.
 
 ## Table Configurations
 
@@ -120,8 +171,31 @@ Table-specific options are passed via the pipeline spec under `table_configurati
 | `items_per_page` | `officers`, `filing_history`, `persons_with_significant_control` | integer (1–100) | Overrides the pagination page size. Defaults to `100`. Values outside `[1, 100]` are clamped by the connector. Ignored by `company_profile`, `registered_office_address`, and `charges` (which are not paginated). |
 | `category` | `filing_history` | string | Filters filings by category. Valid values include `accounts`, `address`, `annual-return`, `capital`, `change-of-name`, `incorporation`, `liquidation`, `miscellaneous`, `mortgage`, `officers`, `persons-with-significant-control`, `resolution`, `confirmation-statement`. |
 | `register_view` | `persons_with_significant_control` | string | When set to `true`, returns the PSC register view rather than the PSC filings view. |
+| `pipeline_name` | all tables | string | Stamped into the `_ingested_by` audit column on every record (see [Audit Columns](#audit-columns)) instead of the connector's default identifier. |
 
 Neither `company_profile` nor `registered_office_address` require any table-specific options.
+
+## Audit Columns
+
+Every table gets four connector-injected columns, stamped once per record in `_read_records_for_company` (`companies_house.py`):
+
+| Column | Type | Description |
+|---|---|---|
+| `_ingested_at` | timestamp | UTC time the record was fetched from the API. |
+| `_ingested_by` | string | The `pipeline_name` table option, if set (must be in `externalOptionsAllowList`); otherwise a fixed connector identifier (`companies_house_lakeflow_connector`). There is no per-request human identity available inside a Spark Python Data Source worker, so this names a process, not a person. |
+| `_source_api_url` | string | The Companies House endpoint (e.g. `https://api.company-information.service.gov.uk/company/07195160`) the record's `company_number`/table pair was fetched from. For paginated tables this is the base endpoint, not a specific page URL. |
+| `_source_record_url` | string | The item's own `links.self` from the API response — its resource identifier, distinct from `_source_api_url` above. Falls back to `<_source_api_url>#<index>` if the item has no `links.self`, so it's always populated and unique within one company's fetch. Used as part of the primary key for `officers`, `persons_with_significant_control`, and `charges` (see [Notes on primary keys](#notes-on-primary-keys)). |
+
+To have `_ingested_by` reflect the actual pipeline instead of the default, set `pipeline_name` as a table option in the pipeline spec:
+
+```yaml
+connector_options:
+  community_connector_options:
+    options:
+      pipeline_name: companies_house_api_ingestion_pl
+```
+
+This requires `pipeline_name` to be in the connection's `externalOptionsAllowList` (added automatically by `create_connection`/`update_connection` from this file's `external_options_allowlist`).
 
 ## Data Type Mapping
 
